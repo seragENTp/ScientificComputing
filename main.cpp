@@ -308,22 +308,26 @@ int main() {
     // Section 1
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     
-    
+    vector<vector<double>> linear_points {{-0.20707,-0.319029},{0.706672,0.0931669},{1.63739,2.17286},{2.03117,2.76818},{3.31874,3.56743},{5.38201,4.11772},{6.79971,5.52709},{6.31814,7.46613},{8.20829,8.7654},{8.53994,9.58096}};
+
     vector<vector<double>> polynomial_points {{1,2.5479},{2,2.2404},{3,6.6783},{4,8.4439},{5,7.8052},{6,6.7533},{7,0.0672},{8,6.0217},{9,3.8677}};
     vector<vector<double>> poly_out_normal;
     
-    //vector<vector<double>> linear_points {{95,85},{85,95},{80,70},{70,65},{60,70}};
-    vector<vector<double>> linear_points {{-0.20707,-0.319029},{0.706672,0.0931669},{1.63739,2.17286},{2.03117,2.76818},{3.31874,3.56743},{5.38201,4.11772},{6.79971,5.52709},{6.31814,7.46613},{8.20829,8.7654},{8.53994,9.58096}};
 
     vector<double> linear_out, poly_output;
     k = int(polynomial_points.size());
+    
+    // linear regression
     
     linear_out = linear_regression(linear_points);
 
     cout << "Bias: " << linear_out[0] <<endl;
     cout << "Slope: " << linear_out[1] <<endl;
 
-    poly_out_normal = polynomial_regression(polynomial_points,2);
+
+    // polynomial regression 
+    
+    poly_out_normal = polynomial_regression(polynomial_points,2); // normal equations 
     
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////

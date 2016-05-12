@@ -24,6 +24,13 @@ using namespace std;
 using namespace std::chrono;
 
 
+void printArray(double a[], int n){
+	for (int i = 0; i<n; i++){
+		cout << a[i] << " ";
+	}
+	cout << "\n";
+}
+
 
 
 vector<double> plotter(vector< double > points, vector< double > coefficients){
